@@ -1,0 +1,18 @@
+show databases;
+create database d8r;
+use d8r;
+show tables;
+create table emp(
+empid int,
+name varchar(20),
+surname char(1),
+dob date,
+phone int,
+salary decimal(6,3),
+mobile bigint,
+bonus float,
+per double
+);
+select * from emp;
+insert into emp values(1,'alekhya','K','2004-01-31',2134526780,55.2341453627,7464433974,6.123421,6.34217247334);
+
