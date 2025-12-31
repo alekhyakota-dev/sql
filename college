@@ -1,0 +1,16 @@
+show databases;
+create database uni;
+use uni;
+show tables;
+create table college(
+id int,
+name varchar(30),
+surname char(1),
+dob date,
+branch varchar(30),
+email varchar(30),
+passout char(4),
+cgpa float
+);
+select * from college;
+insert into college values(1,'alekhya','K','2004-01-31','AI&DS','kotaalekhya31@gmail.com',2026,7.8),(2,'divya','K','2004-12-19','AI&DS','kdivya@gmail.com',2026,7.0),(3,'bhavani','J','2004-04-01','AI&DS','jbhavani@gmail.com',2026,7.0),(4,'madarbi','S','2004-06-01','AI&DS','skmadarbi@gmail.com',2026,7.0);
