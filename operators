@@ -1,0 +1,33 @@
+show databases;
+create database ins;
+use ins;
+show tables;
+create table sales(
+sid int,
+name varchar(30),
+surname char(1),
+dob date,
+phone int,
+salary decimal(6,3),
+mobile bigint,
+bonus float,
+per double
+);
+select * from sales;
+insert into sales(sid,name,surname,dob,phone,salary,mobile,bonus,per) values(1,'alekhya','K','2004-01-31',1234567890,55.12354625,8362437937,6.27836439,6.32878496),(2,'dhana','K','2004-06-03',1234567890,55.12354625,8362437937,6.27836439,6.32878496),(3,'divya','A','2004-06-03',1234567890,55.12354625,8362437937,6.27836439,6.32878496),(4,'akhi','A','2004--09-05',1234567890,55.12354625,8362437937,6.27836439,6.32878496);
+
+
+select *, per *15 from sales;
+
+select * from sales where sid >=1;
+
+select * from sales where name='dhana';
+
+select * from sales where sid in (1);
+
+insert into sales(name) values('mahi'),('kalpana');
+
+select * from sales;
+select * from sales where sid is null;
+
+select * from sales where sid is not null;
