@@ -1,0 +1,36 @@
+show databases;
+create database dept;
+use dept;
+create table tech(
+id int,
+name varchar(20),
+dob date,
+age int,
+phone bigint,
+passout char(4),
+cgpa float
+);
+select * from tech;
+desc tech;
+insert into tech values(1,'alekhya','2004-01-31',21,2147639840,2026,7.8);
+insert into tech(id,name,dob,age,phone,passout,cgpa) values(2,'divya','2004-12-19',21,2147342589,2026,6.9),(3,'bhavani','2004-04-01',21,2143678934,2026,6.8),(4,'madarbi','2004-06-01',21,2147536894,2026,6.7);
+select * from tech;
+
+
+alter table tech drop column phone;
+select * from tech;
+
+
+alter table tech modify column id char(1);
+select * from tech;
+desc tech;
+
+
+delete from tech where id=4;
+set sql_safe_updates=0;
+select * from tech;
+
+
+drop table tech;
+
+drop database dept;
