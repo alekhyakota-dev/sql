@@ -1,0 +1,15 @@
+show databases;
+create database ins1;
+use ins1;
+show tables;
+create table college2(
+id int,
+name varchar(20),
+course varchar(20) default 'b.tech',
+department varchar(10) unique,
+marks int check(marks>35 and marks<=100),
+phone bigint not null
+);
+select * from college2;
+insert into college2 (id,name,course,department,marks,phone) values (1,'alekhya','b.tech','AI&DS',80,2147839205),(2,'divya','b.tech','CSE',50,2167327232),(3,'bhavani','b.tech','ECE',55,2143564780),(4,'sahithya','AI&DS','EEE',60,2146354782),(5,'madarbi','AI&DS','CIVIL',65,2147263480);
+
