@@ -1,0 +1,11 @@
+rating=float(input("enter a movie rating:"))
+if rating>4.5 and rating<=5:
+    print("blockbuster")
+elif rating>4 and rating <=4.5:
+    print("hit")
+elif rating>3 and rating<=4:
+    print("good")
+elif rating>2 and rating<=3:
+    print("below average")
+else:
+    print(flop)
