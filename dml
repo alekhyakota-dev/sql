@@ -1,0 +1,26 @@
+show databases;
+create database uni;
+use uni;
+show tables;
+create table college(
+id int,
+name varchar(30),
+surname char(1),
+dob date,
+branch varchar(30),
+email varchar(30),
+passout char(4),
+cgpa float
+);
+select * from college;
+insert into college values(1,'alekhya','K','2004-01-31','AI&DS','kotaalekhya31@gmail.com',2026,7.8),(2,'divya','K','2004-12-19','AI&DS','kdivya@gmail.com',2026,7.0),(3,'bhavani','J','2004-04-01','AI&DS','jbhavani@gmail.com',2026,7.0),(4,'madarbi','S','2004-06-01','AI&DS','skmadarbi@gmail.com',2026,7.0);
+alter table college add column collegename varchar(20);
+alter table college add column department varchar(20) after dob;
+alter table college add column rollno varchar(20) first;
+update college set collegename='st.marys' where id=1;
+set sql_safe_updates=0;
+select * from college;
+delete from college where department is null;
+update college set department='CSE'where surname='k';
+update college set rollno=5477 where branch='AI&DS';
+desc college;
