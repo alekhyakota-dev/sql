@@ -1,0 +1,29 @@
+#nested if
+num=int(input("Enter a number:"))
+if num>=0:
+    if num%2==0:
+        print("positive even numer")
+    else:
+        print("postive odd number")
+else:
+    if num%2==0:
+        print("negative even number")
+    else:
+        print("negative odd number")
+
+
+#match case
+grade=input("enter grade")
+match grade:
+    case "A":
+        print("Excellent")
+    case "B":
+        print("Good")
+    case "C":
+        print("Average")
+    case "D":
+        print("Poor")
+    case "F":
+        print("Fail")
+    case _:
+        print("Invalid")
