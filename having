@@ -1,0 +1,36 @@
+show databases;
+use dept;
+show tables;
+select * from e_commerce_orders;
+
+select  product_name,count(order_id),count(quantity) from e_commerce_orders group by product_name,order_id,quantity;
+
+select order_date,price from e_commerce_orders group by order_date,price;
+
+select total_amount from e_commerce_orders;
+
+select product_name from e_commerce_orders where price>199.99;
+
+select quantity from e_commerce_orders where quantity>1; 
+
+select (order_id),(product_name),(order_date) from e_commerce_orders group by (order_id),(product_name),(order_date);
+
+select (order_id),(product_name) from e_commerce_orders where product_name='Smartphone';
+
+select distinct product_name from e_commerce_orders;
+
+select distinct product_name,total_amount,order_date from e_commerce_orders;
+
+select distinct order_id,quantity from e_commerce_orders;
+
+select * from e_commerce_orders;
+
+select max(price) from e_commerce_orders;
+
+select min(price) from e_commerce_orders;
+
+select sum(quantity) from e_commerce_orders;
+
+select count(order_date) from e_commerce_orders;
+
+select avg(total_amount) from e_commerce_orders;
