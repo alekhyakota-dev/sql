@@ -1,0 +1,53 @@
+use dept;
+create table rajasaab(
+tid int primary key,
+theator varchar(100),
+seat int,
+screens int
+);
+create table theator(
+tid int,
+ticket int,
+collection int,
+foreign key (tid) references rajasaab(tid)
+);
+insert into rajasaab values(2,'mythri',300,4),
+(3,'sandhya',250,3),
+(4,'pallavi',300,2),
+(5,'pvr',500,6),
+(6,'dolby',300,1);
+
+select * from rajasaab;
+
+insert into theator values(3,150,2500),
+(3,151,2500),
+(5,500,5000),
+(6,100,1000);
+
+select * from theator;
+
+select * from rajasaab inner join theator on rajasaab.tid=theator.tid;
+
+select theator,collection from rajasaab inner join theator on rajasaab.tid=theator.tid;
+
+select * from rajasaab inner join theator on rajasaab.tid=theator.tid where theator='sandhya';
+
+select * from rajasaab where seat>150;
+
+select * from rajasaab inner join theator on rajasaab.tid=theator.tid where collection>1000; 
+
+select * from rajasaab inner join theator on rajasaab.tid=theator.tid order by seat;
+
+select * from rajasaab inner join theator on rajasaab.tid=theator.tid order by screens asc;
+
+select * from rajasaab inner join theator on rajasaab.tid=theator.tid order by ticket asc;
+
+select theator,ticket from rajasaab inner join theator on rajasaab.tid=theator.tid; 
+
+select * from rajasaab inner join theator on rajasaab.tid=theator.tid limit 3;
+
+select theator,collection from rajasaab inner join theator on rajasaab.tid=theator.tid group by theator,collection;
+
+select theator from rajasaab inner join theator on rajasaab.tid=theator.tid where theator='sandhya';
+
+select distinct ticket,collection,screens from rajasaab inner join theator on rajasaab.tid=theator.tid;
