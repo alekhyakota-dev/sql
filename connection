@@ -1,0 +1,33 @@
+show databases;
+use dept;
+show tables;
+create table rating(
+sno int primary key,
+name varchar(100),
+age int,
+score int
+);
+
+create table t2(
+sno int,
+id int primary key,
+marks int,
+grade char(1),
+foreign key (sno) references rating(sno)
+);
+
+create table t3(
+id int,
+address varchar(100),
+email varchar(100),
+foreign key (id) references t2(id)
+);
+
+create table t4(
+sno int,
+id int,
+phone bigint,
+foreign key (sno) references rating(sno),
+foreign key (id) references t2(id)
+);
+
