@@ -1,0 +1,11 @@
+num=int(input("Enter a number:"))
+if num>=0:
+    if num%2==0:
+        print("positive even numer")
+    else:
+        print("postive odd number")
+else:
+    if num%2==0:
+        print("negative even number")
+    else:
+        print("negative odd number")
