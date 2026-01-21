@@ -1,0 +1,86 @@
+use dept;
+create table t1(
+id int primary key,
+name varchar(100),
+age int,
+phone bigint
+);
+create table t22(
+id int,
+email varchar(100) primary key,
+marks int,
+grade char(1),
+foreign key (id) references t1(id)
+);
+create table t33(
+email varchar(100),
+id int,
+branch varchar(10),
+city varchar(100),
+foreign key (email) references t22(email),
+foreign key (id) references t1(id)
+); 
+
+insert into t1 values (1,'alekhya',21,1234567890),
+(2,'vikas',55,0987654321),
+(3,'priya',21,6789054321),
+(4,'pranay',99,1234567890),
+(5,'dhanush',100,6789054321);
+
+insert into t22 values(1,'a@gmail.com',99,'A'),
+(2,'v@gmail.com',98,'A'),
+(3,'p@gmail.com',70,'C'),
+(5,'d@gmail.com',80,'B');
+
+insert into t33 values('d@gmail.com',1,'ds','guntur'),
+('v@gmail.com',4,'cse','hyderabad'),
+('p@gmail.com',3,'ece','hyd');
+
+select * from t1;
+select * from t22;
+select * from t33;
+
+select * from t1 inner join t22 on t1.id=t22.id;
+
+select * from t1 inner join t22 on t1.id=t22.id inner join t33 on t33.id=t22.id;
+
+select * from t1 inner join t22 on t1.id=t22.id inner join t33 on t33.id=t1.id;
+
+select * from t1 inner join t22 on t1.id=t22.id left join t33 on t33.id=t1.id;
+
+select * from t1 inner join t22 on t1.id=t22.id left join t33 on t33.email=t22.email;
+
+select * from t1 join t1 as t4 join t1 as t;
+
+select * from t1 join t1 as t4 on t1.id=t4.id join t1 as t on t.id=t4.id;
+
+
+
+select * from gopal;
+alter table gopal add column grade char(1) after quantity;
+desc gopal;
+set sql_safe_updates=0;
+update gopal set quantity=1 where quantity='one';
+update gopal set quantity=2 where quantity='two';
+update gopal set quantity=10 where quantity='one0';
+alter table gopal modify column quantity int; 
+
+elect *, case 
+when quantity>=7 then grade='a'
+when quantity>=5 then grade='b'
+when quantity>=2 then grade='c'
+else 'D'
+end from alekhya;
+
+select *, case 
+when quantity>=7 then 'a'
+when quantity>=5 then 'b'
+when quantity>=2 then 'c'
+else 'D'
+end as g from alekhya;
+
+
+
+
+
+
