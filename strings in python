@@ -1,0 +1,4 @@
+sentence=input("enter a string:")
+letter=input("enter a letter:")
+count = sentence.count(letter)
+print(f"The letter '{letter}' repeats {count} times.")
