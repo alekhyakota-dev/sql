@@ -1,0 +1,7 @@
+s = input("Enter a string: ")
+result = ""
+
+for ch in s:
+    result += chr(ord(ch) - 1)
+
+print("Output:", result)
