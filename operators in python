@@ -1,0 +1,28 @@
+use dept;
+select * from gopal;
+
+select * from gopal where customer_name like 'a%';
+
+select * from gopal where customer_name like 's%a%';
+
+select * from gopal where product_name like  'm%';
+
+select * from gopal where delivery_status like 'c%'; 
+
+select * from gopal where city like 'c%a_';
+
+select * from gopal where city like 'c%';
+
+select * from gopal where region like 's%';
+
+select * from gopal where sale_id like '1%';
+
+select * from gopal where pincode like '68%0_';
+
+select * from gopal where product_name like 'c%';
+
+select * from gopal where payment_method like 'o%';
+
+select * from gopal where pincode like'4%0_';
+
+select * from gopal where total_amount like '4%';
