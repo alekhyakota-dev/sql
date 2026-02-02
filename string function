@@ -1,0 +1,24 @@
+use dept;
+select * from gopal;
+select *,concat(customer_name,region) as i from gopal;
+alter table gopal add column details varchar(100);
+update gopal set details=concat(customer_name,region);
+set sql_safe_updates=0;
+update gopal set customer_name=concat(customer_name,region);
+select *, upper(payment_method) from gopal;
+select *, lower(payment_method) from gopal;
+select *,concat(upper(left(delivery_status,1)),lower(substr(delivery_status,2))) from gopal;
+update gopal set delivery_status=concat(upper(left(delivery_status,1)),lower(substr(delivery_status,2)));
+select *,length(product_name) from gopal;
+select *,concat(total_amount,payment_method) from gopal;
+select *,left(pincode,2) from gopal;
+select *,left(city,3) from gopal;
+select *,right(product_name,4) from gopal;
+select *,substr(customer_name,-4,4) from gopal;
+select *,replace(North,'o','a') from gopal;
+select *,replace(region,'North','--------') from gopal;
+select *,reverse(pincode) from gopal;
+select *,trim(region) from gopal;
+
+update gopal set region=concat('       ',region);
+select * from gopal;
