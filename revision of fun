@@ -1,0 +1,142 @@
+show databases;
+use dept;
+show tables;
+CREATE TABLE e_commerce_orders (
+    order_id INT PRIMARY KEY,
+    customer_name VARCHAR(100),
+    product_name VARCHAR(100),
+    quantity INT,
+    price DECIMAL(10, 2),
+    total_amount DECIMAL(10, 2),
+    order_date DATE
+);
+select * from e_commerce_orders;
+INSERT INTO e_commerce_orders (order_id, customer_name, product_name, quantity, price, total_amount, order_date)
+VALUES
+(1, 'Ravi Kumar', 'Smartphone', 1, 699.99, 699.99, '2025-10-01'),
+(2, 'Amit Sharma', 'Laptop', 1, 999.99, 999.99, '2025-10-02'),
+(3, 'Raj Patel', 'Headphones', 2, 49.99, 99.98, '2025-10-03'),
+(4, 'Neha Gupta', 'Smartwatch', 1, 199.99, 199.99, '2025-10-04'),
+(5, 'Priya Mehta', 'Tablet', 1, 329.99, 329.99, '2025-10-05'),
+(6, 'Vikram Singh', 'Keyboard', 1, 89.99, 89.99, '2025-10-06'),
+(7, 'Sonia Reddy', 'Mouse', 2, 19.99, 39.98, '2025-10-07'),
+(8, 'Ravi Sharma', 'Monitor', 1, 249.99, 249.99, '2025-10-08'),
+(9, 'Ananya Iyer', 'Phone Case', 3, 15.99, 47.97, '2025-10-09'),
+(10, 'Karan Joshi', 'Smartphone', 2, 699.99, 1399.98, '2025-10-10'),
+(11, 'Maya Desai', 'Gaming Console', 1, 399.99, 399.99, '2025-10-11'),
+(12, 'Rohit Kapoor', 'Speakers', 2, 79.99, 159.98, '2025-10-12'),
+(13, 'Simran Chawla', 'Laptop', 1, 849.99, 849.99, '2025-10-13'),
+(14, 'Amitabh Reddy', 'Smartwatch', 1, 199.99, 199.99, '2025-10-14'),
+(15, 'Tanya Gupta', 'Smartphone', 1, 799.99, 799.99, '2025-10-15'),
+(16, 'Harish Kaur', 'Tablet', 1, 299.99, 299.99, '2025-10-16'),
+(17, 'Deepak Singh', 'Keyboard', 2, 69.99, 139.98, '2025-10-17'),
+(18, 'Neelam Verma', 'Headphones', 1, 89.99, 89.99, '2025-10-18'),
+(19, 'Kunal Joshi', 'Gaming Console', 1, 499.99, 499.99, '2025-10-19'),
+(20, 'Pooja Shah', 'Monitor', 1, 199.99, 199.99, '2025-10-20');
+select * from e_commerce_orders;
+
+
+select* from e_commerce_orders where price>500;
+
+select* from e_commerce_orders where customer_name='Ravi Kumar';
+
+select * from e_commerce_orders where product_name='Laptop';
+
+select * from e_commerce_orders where order_date between '2025-10-05' and '2025-10-15';
+
+select distinct product_name from e_commerce_orders;
+
+select distinct customer_name from e_commerce_orders where product_name='Smartphone';
+
+select * from e_commerce_orders order by order_date asc;
+
+select * from e_commerce_orders order by total_amount desc;
+
+select * from e_commerce_orders;
+
+select * from e_commerce_orders limit 5;
+
+select * from e_commerce_orders order by order_date desc limit 3;
+
+select * from e_commerce_orders where customer_name like 'R%';
+
+select * from e_commerce_orders where price between 100 and 500;
+
+select * from e_commerce_orders where quantity>1;
+
+select * from e_commerce_orders where product_name<>'Smartphone';
+
+select distinct customer_name from e_commerce_orders where order_date='2025-10-10';
+
+
+
+use dept;
+
+select * from gopal;
+
+select *,concat(customer_name,region) as i from gopal;
+
+select *, upper(payment_method) from gopal;
+
+select *, lower(payment_method) from gopal;
+
+select *,concat(upper(left(delivery_status,1)),lower(substr(delivery_status,2))) from gopal;
+
+update gopal set delivery_status=concat(upper(left(delivery_status,1)),lower(substr(delivery_status,2)));
+
+select *,length(product_name) from gopal;
+
+select *,concat(total_amount,payment_method) from gopal;
+
+select *,left(city,3) from gopal;
+
+select *,right(product_name,4) from gopal;
+
+select *,substr(customer_name,-4,4) from gopal;
+
+select *,replace(North,'o','a') from gopal;
+
+select *,reverse(pincode) from gopal;
+
+select *,trim(region) from gopal;
+
+select date_add(current_date(),interval 3 month);
+
+select date_sub('2025-01-03',interval 10 day);
+
+select datediff('2026-01-23','2026-01-21');
+
+select extract(second from now());
+
+select dayname('2026-01-18');
+
+select monthname('2026-02-07');
+
+select dayname('2025-01-01');
+
+select *,date_format(str_to_date(order_date,'%m/%d/%Y'),'%Y-%m-%d') from gopal;
+
+use dept;
+create table college(
+name varchar(100),
+dept varchar(100),
+marks int);
+
+insert into college values('alekhya','AI&DS',98),('divya','AI&DS',99),('bhavani','AI&DS',90),('keerthi','ECE',95),('dhanalakshmi','ECE',94),('ram','ECE',85);
+
+select * from college;
+
+select *,row_number() over() as sno from college;
+
+select *,rank() over(order by marks desc) from college;
+
+select *,dense_rank() over(order by marks desc) from college;
+
+select *,dense_rank() over(partition by dept order by marks desc) from college;
+
+select *,rank() over(partition by dept order by marks desc) from college;
+
+select *,lead(name,2) over() from college;
+
+select *,lag(marks,2) over() from college;
+
