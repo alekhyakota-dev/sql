@@ -1,0 +1,36 @@
+use dept;
+select date_add(current_date(),interval 3 month);
+select date_add(now(),interval 1 year);
+select date_sub('2025-01-03',interval 10 day);
+select date_sub('2024-12-24',interval 5 day);
+select date_sub(now(),interval 6 month);
+select datediff('2026-01-23','2026-01-21');
+select datediff('2004-11-03','2004-01-31');
+select extract(second from now());
+
+select dayname('2026-01-18');
+select monthname('2026-02-07');
+select dayname('2025-01-01');
+
+
+use dept;
+select * from gopal;
+desc gopal;
+select *,date_format(str_to_date(order_date,'%m/%d/%Y'),'%Y-%m-%d') from gopal;
+set sql_safe_updates=0;
+
+select *,datediff(curdate(),order_date) from gopal;
+select *,extract(month from order_date) from gopal;
+select *,dayname(order_date) from gopal;
+
+use dept;
+select * from e_commerce_orders;
+select *,dayname(order_date) from e_commerce_orders;
+select *,datediff(curdate(),order_date) from e_commerce_orders;
+select *,extract(month from order_date) from e_commerce_orders;
+select order_date>'2025-10-06' from e_commerce_orders;
+select date_sub(max(order_date),interval 6 month) from e_commerce_orders;
+select *,dayname(order_date) from e_commerce_orders;
+
+
+
