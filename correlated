@@ -1,0 +1,83 @@
+use d8r;
+select * from emp;
+
+select * from emp where salary>
+(select avg(salary) from emp);
+
+select * from emp where age<
+(select max(age) from emp where department='HR');
+
+select * from emp where city in
+(select city from emp where name='RAVI');
+
+select * from emp where salary in
+(select salary from emp where name='KARAN');
+
+select * from emp where salary>
+(select salary from emp where name='sneha');
+
+select * from emp where department in
+(select department from emp where name='NISHA');
+
+select * from emp where age>
+(select min(age) from emp where department='sales');
+
+select * from emp where salary>all
+(select salary from emp where department='HR');
+
+select * from emp where department in
+(select department from emp where salary>70000);
+
+select * from emp as e where salary>
+(select avg(salary) from emp where department=department);
+
+select * from emp e where salary =
+(select max(salary) from emp where department=e.department);
+
+select * from emp e where salary =
+(select min(salary) from emp where department=e.department);
+
+select * from emp e where age>
+(select avg(age) from emp where department=e.department);
+
+select city from emp group by city order by count(*) desc limit 1;
+
+select max(salary) from emp where salary<
+(select max(salary) from emp);
+
+select max(salary) from emp where salary<
+(select max(salary) from emp where salary<
+(select max(salary) from emp));
+
+select * from emp where city='DELHI' and salary >
+(select avg(salary) from emp where city='DELHI');
+
+select * from emp where salary<
+(select avg(salary) from emp where age>30);
+
+select * from emp where age<
+(select max(age) from emp where department='sales');
+
+select * from emp where salary>
+(select avg(salary) from emp where department='Finance')
+and salary<
+(select max(salary) from emp where department='IT');
+
+select * from emp where department=
+(select department from emp group by department order by count(*) asc limit 1);
+
+select * from emp where city in
+(select city from emp group by city having count(*) > (select count(*) from emp where name='PRIYA'));
+
+select * from emp where department in
+(select department from emp group by department having avg(salary)>55000);
+
+select * from emp e where salary>
+(select avg(salary) from emp)
+and salary<
+(select max(salary) from emp where department=e.department);
+
+select * from emp where salary>
+(select avg(salary) from emp)
+and age<
+(select avg(age) from emp);
