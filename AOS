@@ -1,0 +1,6 @@
+s = int(input("Enter a number:"))
+AOS = s*s
+print(AOS)
+
+
+
