@@ -1,0 +1,4 @@
+b = int(input("Enter a number:"))
+h = int(input("Enter a number:"))
+AOT = (1/2)*b*h
+print(AOT)
