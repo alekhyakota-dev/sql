@@ -1,0 +1,7 @@
+math = int(input("Enter marks:"))
+phy = int(input("Enter marks:"))
+chem = int(input("Enter marks:"))
+sum = math+phy+chem
+print(sum)
+average = sum/3
+print(average)
