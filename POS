@@ -1,0 +1,3 @@
+s = int(input("Enter a number:"))
+POS = 4*s
+print(POS)
