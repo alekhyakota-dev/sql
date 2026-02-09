@@ -1,0 +1,4 @@
+l = int(input("Enter a number:"))
+b = int(input("Enter a number:"))
+AOR = l*b
+print(AOR)
