@@ -1,0 +1,46 @@
+use uni;
+show tables;
+select * from college;
+select * from personal_expense_dataset;
+alter table personal_expense_dataset rename to expense;
+select * from expense;
+alter table expense add column cid int first;
+select *,row_number() over() from expense; 
+select row_number() over() as cid from expense;
+
+with cte as(
+select *,case
+when amount>10000 then 'A' 
+when amount>5000 then 'B'
+when amount>3500 then 'C'
+when amount>2000 then 'D' 
+when amount>1000 then 'E' 
+when amount>500 then 'F'
+else 'G'
+end as grade from expense)
+select * from cte;
+
+with abc as(
+select *,case
+when cgpa>7.5 then 'A'
+when cgpa=7 then 'B'
+when cgpa<6 then 'C'
+end as rating from college)
+select * from cte inner join abc on cte.cid=abc.tid;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
