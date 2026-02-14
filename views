@@ -1,0 +1,43 @@
+use d8r;
+create view hr_d as
+select * from emp where department='HR';
+select * from hr_d;
+
+create view it_d as
+select * from  emp where department='IT';
+select * from it_d;
+
+create view sa_d as 
+select * from emp where department='SALES';
+select * from sa_d;
+
+create view fi_d as 
+select * from emp where department='FINANCE';
+select * from fi_d;
+
+create view salary as
+select * from emp where salary>60000;
+select * from salary;
+
+insert into hr_d values(35,'alekhya','HR',98000,22,'GNT');
+
+select * from emp;
+
+update emp set department='IT' where empid=35;
+
+use dept;
+select * from t1;
+select * from t22;
+desc rating;
+
+insert into t22 values(2,'y@gmail.com',98,'A');
+
+select * from rating;
+insert into rating values(5,'keerthi',21,74);
+
+create view t as select t1.*,t22.email,t22.marks,t22.grade from t1 inner join t22 on t1.id=t22.id;
+select * from t;
+
+
+
+
