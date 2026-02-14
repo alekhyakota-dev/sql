@@ -1,0 +1,122 @@
+use d8r;
+
+create table trigger1(
+acc int,
+name varchar(100),
+branch varchar(100),
+bal float,
+phone bigint
+);
+select * from trigger1;
+
+create table trigger2(
+history varchar(100),
+dot datetime default now()
+);
+
+select * from trigger2;
+
+insert into trigger1 values(1,'bob','jublihills',-100,1234567890);
+
+delimiter $$ 
+create trigger t1
+after insert on trigger1
+for each row
+begin
+insert into trigger2 (history) values('successful new acc created');
+end $$
+delimiter ;
+
+insert into trigger1 values(2,'mahesh','babu',50,2364548209),(3,'alekhya','naidu',1000000,6303645170),(4,'gopal','naidu',2000000,7671856296);
+
+select * from trigger1;
+
+ set sql_safe_updates=0;
+ 
+ update trigger1 set bal=1 where acc=1;
+ 
+update trigger1 set name='dhanalakshmi' where acc in (1);
+
+
+delimiter $$
+create trigger t2
+after update on trigger1
+for each row
+begin
+insert into trigger2(history) values ('successfully record updated--');
+end $$
+delimiter ;
+
+select * from trigger2;
+
+delimiter $$
+create trigger t3
+after delete on trigger1
+for each row
+begin
+insert into trigger2 (history) values ('bye');
+end $$
+delimiter ;
+
+select * from trigger1;
+delete from trigger1;
+select * from trigger2;
+
+
+
+
+
+
+
+
+
+use coders;
+
+select * from insta_post;
+
+use information_schema;
+
+show tables;
+
+select * from ROUTINES;
+
+use coders;
+
+delimiter $$
+create procedure prompt(in a int)
+begin
+select * from insta_post where likes>a;
+end $$
+delimiter ;
+
+call prompt(300);
+
+delimiter $$
+create procedure li(a int)
+begin
+select * from insta_post where likes>500;
+end $$
+delimiter ;
+
+call li(500);
+call li(@b);
+
+delimiter $$
+create procedure hybrid(in a int, out b int)
+begin
+select * from insta_post where likes>a;
+end $$
+delimiter ;
+
+call hybrid(300,@b);
+
+delimiter $$
+create procedure _common(inout a int)
+begin
+select * from insta_post where likes>a;
+end $$
+delimiter ;
+
+call _common(500);
+
+
