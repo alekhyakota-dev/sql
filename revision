@@ -1,0 +1,97 @@
+student = {
+    "name": "Ravi",
+    "age": 20,
+    "course": "Python",
+    "marks": 85
+}
+
+# 1. Add a new key 'city' with value 'Hyderabad'.
+# student["city"] = "Hyderabad"
+# print(student)
+
+
+# 2. Add a key 'email' with any email address.
+# student["email"] = "alekhya@gmail.com"
+# print(student)
+
+
+# 3. Add a key 'phone' with value 9876543210.
+# student["phone"] = 9876543210
+# print(student)
+
+
+# 4. Add keys 'college' and 'year' in one statement.
+# student.update({"college":"ST.MARY'S COLLEGE","Year":"4TH YEAR"})
+# print(student)
+
+
+# 5. Print the value of the key 'name'.
+# print(student["name"])
+
+
+# 6. Print the value of the key 'marks'.
+# print(student["marks"])
+
+
+# 7. Print all keys in the dictionary.
+# print(student.keys())
+
+
+# 8. Print all values in the dictionary.
+# print(student.values())
+
+
+# 9. Update the value of 'marks' to 90.
+# student["marks"] = 90
+# print(student)
+
+
+# 10. Increase the value of 'age' by 1.
+# student["age"] +=1
+# print(student)
+
+
+# 11. Change the value of 'course' to 'Data Science'.
+# student["course"] = "Data Science"
+# print(student)
+
+
+# 12. Remove the key 'email' using pop().
+# student = {
+#     "name": "Ravi",
+#     "age": 21,
+#     "Course":"Data Science",
+#     "email": "alekhyakota@gmail.com"
+# }
+# student.pop("email")
+# print(student)
+
+
+# 13. Remove the last inserted key-value pair using popitem().
+# student.popitem()
+# print(student)
+
+
+# 14. Clear the entire dictionary.
+# student.clear()
+# print(student)
+
+
+# 15. Guess the output:
+# student['marks'] = 95
+# print(student['marks'])          
+# student = {}
+# student['marks'] = 95
+# print(student['marks'])
+
+
+# 16. Guess the output:
+#    student.pop('age')
+#    print(student)
+# student = {
+#     "name": "Ravi",
+#     "age": 21,
+#     "course": "Data Science"
+# }
+# student.pop('age')
+# print(student)
