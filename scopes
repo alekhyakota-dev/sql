@@ -1,0 +1,113 @@
+# LOCAL SCOPE #
+# Task 1 – Local Scope
+# Create a function:
+# - Define a variable message = 'Learning Python'
+# - Print it inside the function
+# - Try printing it outside the function
+# Observe and explain the error.
+
+# def variable():
+#     message = "Learning Python"
+#     print(message)
+
+# variable()
+
+# If we try to print the variable outside the function.Python throws NameError.This happens because the variable is local to the functionand cannot be accessed outside its scope
+
+
+# GLOBAL SCOPE #
+# Task 2 – Global Scope
+# 1. Create a global variable count = 10
+# 2. Write a function that prints count
+# 3. Call the function
+# Now modify count inside the function WITHOUT using global and observe what happens.
+
+# count = 10
+# def update():
+#     print(count)
+# update()
+
+# trying to modify count inside the function without using global
+# count = 10
+# def update():
+#     count = count + 1   # trying to modify
+#     print(count)
+# update()
+# print(count)
+
+#Error
+# count = count + 1   
+#             ^^^^^
+# UnboundLocalError: cannot access local variable 'count' where it is not associated with a value
+
+
+
+# GLOBAL KEYWORD #
+# Task 3 – Using global Keyword
+# 1. Create score = 50
+# 2. Write a function that increases score by 10
+# 3. Use the global keyword
+# 4. Print the updated score outside the function
+# Understand why global is required.
+
+# count = 50
+# def score():
+#     global count
+#     count+=10
+#     print(count)
+# score()
+# score()
+# score()
+# global keyword is used to change the value of a global variable inside a function.
+
+
+# ENCLOSING SCOPE #
+# Task 4 – Enclosing Scope (nonlocal)
+# 1. Create a function outer()
+# 2. Inside it define x = 5
+# 3. Create inner function inner()
+# 4. Modify x inside inner() using nonlocal
+# 5. Print x from outer function
+# Observe how enclosing scope works.
+
+# def outer():
+#     x = 5
+#     def inner():
+#         nonlocal x
+#         x+=10
+#         print("Inside inner:",x)
+#     inner()
+#     print("Inside outer after inner:",x)
+# outer()
+
+# x is local to outer().
+# inner() is nested, so it can access x from the enclosing scope.
+# Without nonlocal, Python would treat x in inner() as a new local variable and modifying it would cause an error.
+# Using nonlocal lets inner() modify x in the outer function.
+
+# LEGB RULE #
+# Task 5 – LEGB Rule
+# x = 100
+# def outer():
+#     x = 50
+#     def inner():
+#         print(x)
+#     inner()
+# outer()
+
+# what will be printed?
+# 50 will be printed.
+
+# x = 100 is a global variable, but it’s not used inside the functions here.
+# Inside outer(), x = 50 is a local variable to outer().
+# inner() is nested inside outer(). When it does print(x), Python looks for x following the LEGB rule:
+# Local → inner() has no x → move to
+# Enclosing → outer() has x = 50 → use this → print 50
+# Global x = 100 is ignored because enclosing x is closer
+# So, the final printed value is 50.
+
+# Why?
+# Python follows the LEGB rule for variable lookup:
+# Local → Enclosing → Global → Built-in
+# inner() doesn’t have its own x, so it uses the x in the enclosing scope (outer()).
+# The global x = 100 is ignored because a closer x exists in outer().
