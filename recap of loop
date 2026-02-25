@@ -1,0 +1,74 @@
+1.Write a program to count the number of vowels in a given string.
+# s = input()
+# count = 0
+# for char in s:
+#     vowels = "aeiouAEIOU"
+#     if char in vowels:
+#         count+=1
+# print(count)
+
+
+2.Write a program to reverse a given string.
+# s = input("Enter a string:")
+# reverse = s[::-1]
+# print("reversed string:",reverse)
+
+
+3.Write a program to count the number of words in a sentence.
+# s = input()
+# count = 0
+# for char in s:
+#     if char in s:
+#         count+=1
+# print(count)
+
+
+4.Write a program to check whether a given string is a palindrome.
+# s = input("Enter string:")
+# if s == s[::-1]:
+#     print("Palindrome")
+# else:
+#     print("Not a Palindrome")
+
+
+5.Write a program to convert all characters of a string to uppercase.
+# s = input("Enter a string:")
+# uppercase = s.upper()
+# print("uppercase:",uppercase)
+
+
+6.Write a program to find the sum of all elements in a given list.
+# list = [1,2,3,4,5,6,7,8,9,10]
+# total = sum(list)
+# print("total:",total)
+
+
+7.Write a program to find the largest element in a list.
+# list = [2,4,6,8,10,12]
+# large = max(list)
+# print("large:",large)
+
+
+8.Write a program to count the number of even numbers in a list.
+# list = [2,3,4,5,6]
+# count = 0
+# for i in list:
+#     if i%2==0:
+#        count+=1
+# print(count)
+
+
+# 9.Write a program to reverse a list.
+# list = [1,2,3,4,5]
+# reverse = list[::-1]
+# print("Reversed:",reverse)
+
+
+# 10.Write a program to check whether a given element exists in a list.
+# num = [3,2,4,5,8,89,100]
+# element = int(input("Enter element to search:"))
+# if element in num:
+#     print("present")
+# else:
+#     print("Not present")
+
