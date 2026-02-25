@@ -1,0 +1,24 @@
+name = input("Enter Name: ")
+age = int(input("Enter Age: "))
+mobile = input("Enter Mobile: ")
+
+email = input("Enter Email (optional): ")
+city = input("Enter City (optional): ")
+dob = input("Enter DOB (optional): ")
+user = {
+    "name": name,
+    "age": age,
+    "mobile": mobile
+}
+if email:
+    user["email"] = email
+
+if city:
+    user["city"] = city
+
+if dob:
+    user["dob"] = dob
+
+print("\nRegistered User Details:")
+print(user)
+
