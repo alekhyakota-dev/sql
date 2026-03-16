@@ -1,0 +1,39 @@
+       # global variable #
+# x = 100
+# class demo:
+#     def display(self):
+#         print("global variable:", x)
+# d = demo()
+# d.display()
+
+
+       # local variable #
+# class demo:
+#       def show(self):
+#             x=50
+#             print("local variable:",x)
+# d = demo()
+# d.show()
+
+
+       # instance variable #
+# class student:
+#     def __init__(self,name,age,marks):
+#         self.name=name
+#         self.age=age
+#         self.marks=marks
+# s1 = student("alekhya",21,90)
+# s2 = student("lakshmi",21,95)
+# print(s1.name,s1.age,s1.marks)
+# print(s2.name,s2.age,s2.marks)        
+
+    # class variable #
+# class student:
+#     school="sriveda school"
+#     def __init__(self,name):
+#         self.name=name
+# s1 = student("alekhya")
+# s2 = student("lakshmi")
+# print(s1.name,student.school)
+# print(s2.name,student.school)
+
