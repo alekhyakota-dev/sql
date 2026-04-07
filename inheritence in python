@@ -1,0 +1,135 @@
+# SINGLE LEVEL INHERITENCE #
+# class phone:
+#     def __init__(self):
+#         print("constructor")
+#     def files(self):
+#         print("movies,documents,pics")
+#     def downloads(self):
+#         print("movies")
+# class laptop:
+#     def desktop(self):
+#         print("folder")
+#     def cdrive(self):
+#         print("storage")
+# obj=phone()
+# obj.files()
+# obj.downloads()
+# obj1=laptop()
+# obj1.desktop()
+# obj1.cdrive()
+
+
+# MULTI LEVEL INHERITENCE #
+# class grandfather:
+#     def height(self):
+#         print("5.8")
+#     def color(self):
+#         print("black")
+#     def age(self):
+#         print(70)
+# class father(grandfather):
+#     def co(self):
+#         print("white")
+#     def weight(self):
+#         print("70")
+# class child(father):
+#     def hobbies(self):
+#         print("cricket")
+# obj = child()
+# obj.color()   
+# obj.height()
+# p = father()
+# p.color()
+# p.age()
+
+
+# MULTIPLE LEVEL INHERITENCE #
+# class father:
+#     def color(self):
+#         print("black")
+#     def weight(self):
+#         print("70")
+# class mother:
+#     def color(self):
+#         print("white")
+#     def height(self):
+#         print("5.8")
+# class child(father,mother):
+#     def hobbies(self):
+#         print("playing game")
+# c = child()
+# c.color()
+# c.height()
+# d = father()
+# d.color()
+# d.weight()
+# e = mother()
+# e.color()
+
+
+# HIERARCHIAL INHERITENCE #
+# class main_software():
+#     def cam(self):
+#         print("50px")
+#     def security(self):
+#         print("ios")
+#     def battery(self):
+#         print("6000")
+# class phone1(main_software):
+#     def color(self):
+#         print("orange")
+#     def battery(self):
+#         print("6000")
+# class phone2(main_software):
+#     def color(self):
+#         print("red")
+# class phone3(main_software):
+#     def color(self):
+#         print("white")
+#     def cam(self):
+#         print("100px")
+
+# ph1 = phone1()
+# ph1.color()
+# ph1.battery()
+# ph1.security()
+
+# ph2 = phone2()
+# ph2.color()
+# ph2.security()
+
+# ph3 = phone3()
+# ph3.color()
+# ph3.cam()
+# ph3.security()
+# ph3.battery()
+
+
+# HYBRID INHERITENCE #
+# class a():
+#     def color(self):
+#         print("green")
+#     def size(self):
+#         print("16:9")
+# class b(a):
+#     def profession(self):
+#         print("data analyst")
+# class c(a):
+#     def company(self):
+#         print("10000 coders")
+# class d(b,c):
+#     def salary(self):
+#         print("16lpa")
+    # def address(self):
+        # print("kphb")
+
+# obj = d()
+# obj.salary()
+# obj.company()
+# obj.profession()
+# obj.color()
+# obj.size()
+
+# obj1 = b()
+# obj1.color()
+# obj1.profession()
