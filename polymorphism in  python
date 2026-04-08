@@ -1,0 +1,44 @@
+# DUCKTYPING #
+# class Bird:
+#     def fly(self):
+#         print("Bird can fly")
+# class Aeroplane:
+#     def fly(self):
+#         print("Aeroplane can fly")
+# def perform(obj):
+#     obj.fly()
+# b = Bird()
+# a = Aeroplane()
+# perform(b)
+# perform(a)
+
+# METHOD OVERLOADING #
+# class calculator:
+#     def add(self,a,b=0,c=0):
+#         return a+b+c
+# c = calculator()
+# print(c.add(5))
+# print(c.add(5,10))
+# print(c.add(5,10,15))
+
+
+# METHOD OVERRIDING #
+# class animal:
+#     def sound(self):
+#         print("Animal makes sound")
+# class Dog(animal):
+#     def sound(self):
+#         print("Dog barks")
+# d = Dog()
+# d.sound()
+
+
+# OPERATOR OVERLOADING #
+# class Number:
+#     def __init__(self, value):   
+#         self.value = value
+#     def __add__(self, other):
+#         return self.value + other.value
+# n1 = Number(10)
+# n2 = Number(20)
+# print(n1 + n2)  
