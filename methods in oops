@@ -1,0 +1,29 @@
+# # INSTANCE METHOD #
+# class student:
+#     def __init__(self,name,marks):
+#         self.name = name
+#         self.marks = marks
+#     def display(self):
+#         print(self.name)
+#         print(self.marks)
+# s1 = student("alekhya",90)
+# s1.display()
+
+
+# # CLASS METHOD #
+# class student:
+#     school = "ABC school"
+
+#     @classmethod
+#     def show_school(cls):
+#         print(cls.school)
+
+# # student.show_school()
+
+# # STATIC METHOD #
+# class math:
+#     @staticmethod
+#     def add(a,b):
+#         return a+b
+
+# print(math.add(5,10))
