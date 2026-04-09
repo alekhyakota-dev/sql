@@ -1,0 +1,32 @@
+#   PUBLIC #
+#  class demo:
+#     def __init__(self):
+#         self.name = "alekhya"
+ 
+# d = demo()
+# print(d.name)
+
+# PROTECTED #
+# class parent:
+#     def __init__(self):
+#         self.age = 20 
+# class child(parent):
+#     def show(self):
+#         print(self.age)
+
+# c = child()
+# c.show()
+
+# print(c._age)
+
+# PRIVATE #
+# class demo():
+#     def __init__(self):
+#         self.__salary = 5000
+#     def show(self):
+#         print(self.__salary)
+
+# d =demo()
+# d.show()
+
+# print(d._demo__salary)
