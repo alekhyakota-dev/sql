@@ -1,0 +1,45 @@
+try:
+    a=int(input("enter first  number :"))
+    b=int(input("enter second number :"))
+    print(a/b)
+    d={'name':'amandeep','course':'ds'}
+    key=int(input("enter a number"))  # '1'
+    print(d[key])
+    pass
+except ZeroDivisionError:
+    print("donnot mention zero")
+except ValueError:
+    print("please check datatype")
+except KeyError:
+    print("key not found in dict")
+print("furthour code")
+
+d={'name':'amandeep','course':'ds'}
+# d['na']='g1'
+# print(d)
+print(d['na'])
+a=[1,2,3,4,5]
+try:
+    n=int(input("enter index values"))
+    print(a[n])
+except ValueError:
+    print('please enter correct value')
+except IndexError:
+    print("your index not in list")
+print("remaing block of code")
+
+import pandas as pd
+try:
+    data=pd.read_excel(r"C:\Users\hp\Desktop\ecommerce.xlsx")
+    print(data)
+except FileNotFoundError:
+    print("please check your file location ")
+print("futhor code")
+
+
+a=10
+try:
+    print(a) 
+except NameError:
+    print("give name properly")
+print("furthor code")
