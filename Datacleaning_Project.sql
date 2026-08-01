@@ -1,0 +1,166 @@
+create database dataanalysis;
+
+use dataanalysis;
+
+show tables;
+
+select * from dataclean;
+
+rename table dataclean to sales;
+
+select * from sales;
+
+set sql_Safe_updates=0;
+
+update sales set Payment_Method='Netbanking' where Payment_Method is null or Payment_Method=''; 
+
+update sales set Payment_Method=concat(upper(left(Payment_Method,1)),lower(substr(Payment_Method,2)));
+
+update sales set Payment_Method='cash' where Payment_Method='cahs';
+
+update sales set Delivery_Status='cancelled' where Delivery_Status='' or Delivery_Status is null;
+
+update sales set Delivery_Status='cancelled' where delivery_Status='canceled';
+
+select * from sales;
+
+update sales set Delivery_Status=concat(upper(left(Delivery_Status,1)),lower(substr(Delivery_Status,2)));
+
+update sales set region='south' where region is null or region='';
+
+update sales set region=concat(upper(left(region,1)),lower(substr(region,2)));
+
+update sales set Customer_Name=concat(upper(left(Customer_Name,1)),lower(substr(Customer_Name,2)));
+
+select * from sales;
+
+update sales set city=concat(upper(left(city,1)),lower(substr(city,2)));
+
+UPDATE sales set city =
+case
+when city in ('Hyd','Hyderabad') then 'Hyderabad'
+when city in ('Chen nai','Chennai') then 'Chennai'
+when city in ('Bengaluru','Banglore','Bangalore') then 'Bangalore'
+when city in ('Mumbai city','Mum bai','Mumbai') then 'Mumbai'
+when city in ('New delhi','Delhi ncr','Delhi') then 'Delhi'
+when city in ('Poona','Pune city','Pune') then 'Pune'
+when city in ('Calcutta','Kolk ata','Kolkata') then 'Kolkata'
+when city in ('Ahemdabad','Ahmedabad city','Ahmedabad') then 'Ahmedabad'
+when city in ('Jaipur city','Jai pur','Jaipur') then 'Jaipur'
+when city in ('Cochin','Kochin','Kochi city','Kochi') then 'Kochi'
+when city in ('Indore city','Indo re','Indore') then 'Indore'
+when city in ('Bhopal city','Bho pal','Bhopal') then 'Bhopal'
+when city in ('Nagpur city','Nag pur','Nagpur') then 'Nagpur'
+when city in ('Kovai','Coimba tore','Coimbatore') then 'Coimbatore'
+when city in ('Vijay wada','Bezawada','Vijayawada') then 'Vijayawada'
+when city in ('Vizag','Visakhapatnam','Visakha patnam') then 'Visakhapatnam'
+when city in ('Tiruchirapalli','Tri chy','Trichy') then 'Trichy'
+when city in ('Madura i','Madurai city','Madurai') then 'Madurai'
+when city in ('Orugallu','Wara ngal','Warangal') then 'Warangal'
+when city in ('Gun tur','Guntur city','Guntur') then 'Guntur'
+else city
+end;
+select * from sales;
+
+update sales set pincode=
+case
+when city='hyderabad' then  500001
+when city='chennai' then 600001
+when city='bangalore' then 560001
+when city='mumbai' then 400001
+when city='delhi' then 110001
+when city='pune' then 411001
+when city='kolkata' then 700001
+when city='ahmedabad' then 380001
+when city='jaipur' then 302001
+when city='kochi' then 682001
+when city='indore' then 452001
+when city='bhopal' then 462001
+when city='nagpur' then 440001
+when city='coimbatore' then 641001
+when city='vijayawada' then 520001
+when city='visakhapatnam' then 530001
+when city='trichy' then 620001
+when city='madurai' then 625001
+when city='warangal' then 506002
+when city='guntur' then 522002
+else pincode
+end;
+
+select * from sales;
+
+select distinct Product_Name from sales;
+
+update sales set quantity=2 where quantity='two';
+
+update sales set quantity=1 where quantity='one';
+
+update sales set quantity=10 where quantity='one0';
+
+update sales set unit_price=
+case
+when product_Name='chair' then 599
+when product_Name='smartphone' then 22000
+when Product_Name='tablet' then 50000
+when Product_Name='monitor' then 1000
+when Product_Name='keyboard' then 15000
+when Product_Name='mouse' then 2000
+when Product_Name='printer' then 100000
+when Product_Name='laptop' then 55000
+when Product_Name='smartwatch' then 1500
+when Product_Name='headphones' then 2500
+end;
+
+select * from sales;
+
+update sales set total_amount=
+case
+when product_Name='chair' then 599
+when product_Name='smartphone' then 22000
+when Product_Name='tablet' then 50000
+when Product_Name='monitor' then 1000
+when Product_Name='keyboard' then 15000
+when Product_Name='mouse' then 2000
+when Product_Name='printer' then 100000
+when Product_Name='laptop' then 55000
+when Product_Name='smartwatch' then 1500
+when Product_Name='headphones' then 2500
+end;
+
+select * from sales order by sale_id asc;
+
+select distinct customer_name from sales;
+
+select * from sales;
+update sales set customer_name=
+case
+when customer_name in ('pooja m','pooja t') then 'pujitha'
+when customer_name in ('priya r','anita s') then 'priya'
+when customer_name in ('rahul m','amit k') then 'rahul'
+when customer_name in ('sneha k','anita p') then 'sneha'
+when customer_name in ('kiran p','kiran r') then 'alekhya'
+when customer_name in ('amit r','rahul p') then 'gopinadh'
+when customer_name in ('anita r','divya s') then 'sujatha'
+when customer_name in ('priya k','divya k') then 'divya'
+when customer_name in ('amit p','divya r') then 'bhavani'
+end;
+
+select * from sales;
+
+update sales set customer_name='Lakshmi' where customer_name is null;
+
+update sales set Customer_Name = 
+case
+    WHEN RAND() < 0.2 THEN 'Anjali'
+    WHEN RAND() < 0.4 THEN 'Kavya'
+    WHEN RAND() < 0.6 THEN 'Sneha'
+    WHEN RAND() < 0.8 THEN 'Padmavathi'
+    ELSE 'Meena'
+END
+WHERE Customer_Name = 'Lakshmi';
+
+update sales set customer_name=concat(upper(left(customer_name,1)),lower(substr(customer_name,2)));
+
+update sales set order_date=date_format(str_to_date(order_date,'%d-%m-%Y'),'%Y-%m-%d');
+
+select * from sales order by sale_id asc;
